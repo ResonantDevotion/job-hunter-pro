@@ -1,7 +1,7 @@
 // importing various folders/libraries to use here
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./style.css";
+import "./navbar.css";
 
 //function that creates a navigation bar element for the App
 function Navbar() {

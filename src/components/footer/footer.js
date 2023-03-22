@@ -1,7 +1,7 @@
 // importing various folders/libraries to use here
 import React from "react";
 import { FaGithub } from "react-icons/fa";
-import "./style.css";
+import "./footer.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";

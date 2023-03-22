@@ -1,6 +1,7 @@
 import React from "react";
+import "../pages/pages.css";
 
-import Hero from "../components/hero/index";
+import Hero from "../components/hero/hero";
 
 // function that creates a body for the homepage including information about what the app is about
 function Frontpage() {

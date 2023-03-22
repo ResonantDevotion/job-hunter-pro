@@ -1,14 +1,9 @@
-.section {
-  border: 2px solid black;
-}
-
-/* Navigation */
-
 .navbar {
   background-color: var(--clr) !important;
 }
 
 .nav-item {
+  list-style: none;
   padding-left: 50px;
   padding-right: 50px;
   color: var(--clr5) !important;
