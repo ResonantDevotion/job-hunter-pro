@@ -1,3 +1,52 @@
 .section {
-    border: 2px solid black;
+  border: 2px solid black;
+}
+
+/* Navigation */
+
+.navbar {
+  background-color: var(--clr) !important;
+}
+
+.nav-item {
+  padding-left: 50px;
+  padding-right: 50px;
+  color: var(--clr5) !important;
+  font-family: Rubik Maze;
+  text-shadow: 1px 1px var(--clr1);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--clr4) !important;
+  padding: 3px;
+  color: var(--clr5);
+  font-family: Rubik Maze;
+  text-shadow: 1px 1px var(--clr5);
+  border: 5px solid var(--clr3);
+  border-style: dotted;
+  border-radius: 10px;
+  font-size: 30px !important;
+}
+
+.nav-link:hover {
+  color: var(--clr5) !important;
+  border-color: var(--clr2);
+  text-shadow: 1px 1px var(--clr4);
+}
+.navbar-nav.justify-content-center {
+  flex-direction: row !important;
+}
+
+.container-fluid.justify-content-center {
+  color: var(--clr5) !important;
+  font-family: Rubik Maze;
+  text-shadow: 1px 1px var(--clr1);
+  background-color: var(--clr3) !important;
+}
+.nav-link.active {
+  color: var(--clr1) !important;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  padding: 0;
 }
