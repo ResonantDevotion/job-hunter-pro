@@ -5,7 +5,7 @@ import "./style.css";
 //function that creates a hero element for the App
 function Hero() {
     return (
-        <section>
+        <section className="section">
             <img alt='someone in an interview'></img>
             <h2>Short description</h2>
         </section>

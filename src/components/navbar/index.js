@@ -5,7 +5,7 @@ import "./style.css";
 //function that creates a navigation bar element for the App
 function Navbar() {
     return (
-        <section>
+        <section className="section">
             <h1>Job Hunter PRO</h1>
             <button>Personal profile</button>
             <button>Job Search</button>
