@@ -1,9 +1,12 @@
 // importing various folders/libraries to use here
 import React from "react";
-import "./style.css";
+import "../../../utils/style.css";
 
 //function that creates a user card element for the App
 function UserCard() {
+
+
+
     return (
         <section>
             <card>
@@ -12,6 +15,7 @@ function UserCard() {
                 <input placeholder='Your experience'></input>
                 <input placeholder='Your skills'></input>
                 <button>Save your profile</button>
+                <button>Clear your data</button>
             </card>
         </section>
     );

@@ -1,6 +1,6 @@
 // importing various folders/libraries to use here
 import React from "react";
-import "./style.css";
+import "../../utils/style.css";
 
 //function that creates a job search component for the App
 function JobSearch() {

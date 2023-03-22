@@ -1,6 +1,6 @@
 // importing various folders/libraries to use here
 import React from "react";
-import "./style.css";
+import "../../utils/style.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
