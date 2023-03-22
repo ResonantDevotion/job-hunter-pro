@@ -17,6 +17,7 @@
 }
 
 .nav-link {
+  display: block;
   text-decoration: none;
   color: var(--clr4) !important;
   padding: 3px;
@@ -36,6 +37,7 @@
 }
 .navbar-nav.justify-content-center {
   flex-direction: row !important;
+  display: flex;
 }
 
 .container-fluid.justify-content-center {
