@@ -1,6 +1,6 @@
 // importing various folders/libraries to use here
 import React from "react";
-import "./style.css";
+import "./workCard.css";
 
 //function that creates a work card element for the App
 function WorkCards() {
