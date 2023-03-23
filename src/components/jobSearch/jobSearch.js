@@ -2,7 +2,6 @@
 import {React, useState, useEffect} from "react";
 import WorkCards from "../cards/workCard/workCards";
 import "./jobSearch.css";
-import axios from "axios";
 import schedule from "node-schedule";
 
 //function that creates a job search component for the App
@@ -56,7 +55,18 @@ function JobSearch () {
 					<button type="submit" >Search</button>
 				</form>
 			</section>	
-			<WorkCards />
+			{data.map((data, i) => {
+				return(
+					<WorkCards 
+						title={data.job_title}
+						location={data.job_city}
+						employment_type={data.job_employment_type}
+						description={data.job_description}
+						link={data.job_apply_link}
+						key={i}
+					/>
+				)
+			})}
 		</>
 	);
 	
