@@ -2,30 +2,31 @@
   border: 2px solid black;
 }
 
-.hero {
-  height: 400px;
+.belowHero {
+  height: 100px;
   background-size: cover;
   background-position: center;
   position: relative;
+  background-color: var(--clr3);
 }
 
-.hero h1,
-.hero h2,
-.hero h3 {
+.belowHero h1,
+.belowHero h2,
+.belowHero h3 {
   color: var(--clr5);
   text-shadow: 2px 2px var(--clr1);
 }
 
-.hero h1 {
+.belowHero h1 {
   font-size: 80px;
   padding-top: 140px;
   margin-top: 0;
 }
 
-.hero h2 {
+.belowHero h2 {
   font-size: 60px;
 }
 
-.hero h3 {
+.belowHero h3 {
   font-size: 40px;
 }
