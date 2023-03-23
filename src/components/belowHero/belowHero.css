@@ -1,0 +1,32 @@
+.section {
+  border: 2px solid black;
+}
+
+.belowHero {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: var(--clr3);
+}
+
+.belowHero h1,
+.belowHero h2,
+.belowHero h3 {
+  color: var(--clr5);
+  text-shadow: 2px 2px var(--clr1);
+}
+
+.belowHero h1 {
+  font-size: 80px;
+  padding-top: 140px;
+  margin-top: 0;
+}
+
+.belowHero h2 {
+  font-size: 60px;
+}
+
+.belowHero h3 {
+  font-size: 40px;
+}

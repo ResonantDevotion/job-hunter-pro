@@ -1,7 +1,7 @@
 // importing various folders/libraries to use here
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./style.css";
+import "./navbar.css";
 
 //function that creates a navigation bar element for the App
 function Navbar() {
@@ -11,18 +11,7 @@ function Navbar() {
         <ul className="navbar-nav justify-content-center">
           <li className="nav-item">
             <NavLink
-              to="/gallery"
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
-              Gallery
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
               to="/home"
-              end
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
@@ -32,12 +21,23 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/contact"
+              to="/profile"
+              end
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
             >
-              Contact
+              Profile
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/search"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Search
             </NavLink>
           </li>
         </ul>

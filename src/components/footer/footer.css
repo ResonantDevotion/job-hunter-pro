@@ -1,0 +1,19 @@
+.section {
+  border: 2px solid black;
+}
+
+.footerLinks {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  color: var(--clr1);
+  background-color: var(--clr3) !important;
+}
+
+.footerLinks:hover {
+  color: var(--clr5);
+}
