@@ -1,10 +1,11 @@
 import React from "react";
 import "../pages/pages.css";
+import UserCard from "../components/cards/userCard/userCard";
 
 function Profile() {
   return (
     <div className="profile">
-      <h1>User profile page. Code incoming...</h1>
+      <UserCard />
     </div>
   );
 }
