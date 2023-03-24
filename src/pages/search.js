@@ -1,10 +1,11 @@
 import React from "react";
+import JobSearch from "../components/jobSearch/jobSearch";
 import "../pages/pages.css";
 
 function Search() {
   return (
     <div className="search">
-      <h1>Search page. Code incoming...</h1>
+      <JobSearch />
     </div>
   );
 }
