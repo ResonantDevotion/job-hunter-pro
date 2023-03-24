@@ -2,7 +2,7 @@
 import {React, useState, useEffect} from "react";
 import WorkCards from "../cards/workCard/workCards";
 import "./jobSearch.css";
-import schedule from "node-schedule";
+//import schedule from "node-schedule";
 
 //function that creates a job search component for the App
 function JobSearch () {
@@ -13,24 +13,23 @@ function JobSearch () {
 	const [finalData, setFinalData] = useState('');
 
 	useEffect(() => {
-		fetchData()
-	}, [finalData])
-
-	const fetchData = () => {
+		const fetchData = () => {
 	
-		fetch(`https://jsearch.p.rapidapi.com/search?query=+${position},${location}`, {
-			method: 'GET',
-			headers: {
-				'X-RapidAPI-Key': '708c147ca5msh9dc67ead913554fp11c54bjsn4a3e2e3b0adc',
-				'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
-			}
-		})
-		.then(response => {return response.json()})
-		.then(result => {
-			setData(result.data);
-		})
-		.catch(err => console.error(err));
-	}
+			fetch(`https://jsearch.p.rapidapi.com/search?query=+${position},${location}`, {
+				method: 'GET',
+				headers: {
+					'X-RapidAPI-Key': '708c147ca5msh9dc67ead913554fp11c54bjsn4a3e2e3b0adc',
+					'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+				}
+			})
+			.then(response => {return response.json()})
+			.then(result => {
+				setData(result.data);
+			})
+			.catch(err => console.error(err));
+		}
+		fetchData();
+	}, [position, location, finalData])
 
 	const onPositionChangeHendler = (e) => {
 		setPositions(e.target.value);
