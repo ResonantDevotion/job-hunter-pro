@@ -1,6 +1,6 @@
 // importing various folders/libraries to use here
 import React from "react";
-import "./style.css";
+import "../../utils/style.css";
 import WorkCards from "../cards/workCards";
 
 //function that creates a carousel element for the App
