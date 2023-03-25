@@ -1,40 +1,34 @@
 // importing various folders/libraries to use here
-import {React, useState, useEffect} from "react";
-import WorkCards from "../cards/workCard/workCards";
-import "./jobSearch.css";
-//import schedule from "node-schedule";
+import { React, useState, useRef, useCallback } from "react";
+import WorkCards from "../cards/workCard/workCards"
+import schedule from "node-schedule";
 
 //function that creates a job search component for the App
 function JobSearch () {
-
+	const [data, setData] = useState( false, [] );
 	const [position, setPositions] = useState('');
 	const [location, setLocations] = useState('');
-	const [data, setData] = useState(null, []);
-	const [formSubmit, setFormSubmit] = useState(false);
-	const [finalData, setFinalData] = useState('');
+	const [isLoading, setIsLoading] = useState (false);
+	const scheduledJob = useRef(null);
 
-
-
-	useEffect(() => {
+	const search = useCallback(() => {
+		setIsLoading (true);
+		return fetch(`https://jsearch.p.rapidapi.com/search?query=+${position},${location}`, {
+			method: 'GET',
+			headers: {
+				'X-RapidAPI-Key': 'a1c12b7935mshdb72c4c6a9cc758p16c581jsn3dc92574e38b',
+				'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+			}
+		})
+		.then(response => {return response.json()})
+		.then(result => {
+			setData(result.data);
+			setIsLoading(false);
+		})
 		
-
-		const fetchData = () => {
-	
-			fetch(`https://jsearch.p.rapidapi.com/search?query=+${position},${location}`, {
-				method: 'GET',
-				headers: {
-					'X-RapidAPI-Key': '18e152f324mshbeaae49d17fe1aep190649jsn96aa6c55d44d',
-					'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
-				}
-			})
-			.then(response => {return response.json()})
-			.then(result => {
-				setData(result.data);
-			})
-			.catch(err => console.error(err));
-		}
-		fetchData();
-	}, [position, location, finalData])
+		.catch(err => console.error(err));
+		
+	}, [location, position]);
 
 	const onPositionChangeHendler = (e) => {
 		setPositions(e.target.value);
@@ -44,11 +38,12 @@ function JobSearch () {
 	} 
 
 	const submitHendler = (e) => {
-		e.preventDefault()
-		setFormSubmit(true);
-		setFinalData(position, location);
-		//setPositions("");
-		//setLocations("");
+		e.preventDefault();
+		if(scheduledJob.current || !position || !location) return;
+
+		if(scheduledJob.current) schedule.gracefulShutdown();
+
+		scheduledJob.current = schedule.scheduleJob("*/30 * * * * *", search);
 	}
 
 	console.log(data)
@@ -60,20 +55,24 @@ function JobSearch () {
 					<input placeholder='Desired job' value={position} onChange={onPositionChangeHendler}></input>
 					<input placeholder='Desired job location' value={location} onChange={onLocationChangeHendler}></input>
 					<button type="submit" >Search</button>
-					{formSubmit && data && (
+					{isLoading ? (<div>Loading...</div>) : (
 						<div>
-							{data.map((data, i) => {
-								return(
-									<WorkCards 
-										title={data.job_title}
-										location={data.job_city}
-										employment_type={data.job_employment_type}
-										description={data.job_description}
-										link={data.job_apply_link}
-										key={i}
-									/>
-								)
-							})}
+							{!isLoading && data && (
+								<>
+									{data.map((data, i) => {
+										return(
+											<WorkCards 
+												title={data.job_title}
+												location={data.job_city}
+												employment_type={data.job_employment_type}
+												description={data.job_description}
+												link={data.job_apply_link}
+												key={i}
+											/>
+										)
+									})}
+								</>
+							)}
 						</div>
 					)}
 				</form>
