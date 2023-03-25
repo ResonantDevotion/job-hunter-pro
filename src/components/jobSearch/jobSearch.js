@@ -9,16 +9,21 @@ function JobSearch () {
 
 	const [position, setPositions] = useState('');
 	const [location, setLocations] = useState('');
-	const [data, setData] = useState([]);
+	const [data, setData] = useState(null, []);
+	const [formSubmit, setFormSubmit] = useState(false);
 	const [finalData, setFinalData] = useState('');
 
+
+
 	useEffect(() => {
+		
+
 		const fetchData = () => {
 	
 			fetch(`https://jsearch.p.rapidapi.com/search?query=+${position},${location}`, {
 				method: 'GET',
 				headers: {
-					'X-RapidAPI-Key': '708c147ca5msh9dc67ead913554fp11c54bjsn4a3e2e3b0adc',
+					'X-RapidAPI-Key': '18e152f324mshbeaae49d17fe1aep190649jsn96aa6c55d44d',
 					'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
 				}
 			})
@@ -40,7 +45,10 @@ function JobSearch () {
 
 	const submitHendler = (e) => {
 		e.preventDefault()
+		setFormSubmit(true);
 		setFinalData(position, location);
+		//setPositions("");
+		//setLocations("");
 	}
 
 	console.log(data)
@@ -52,20 +60,25 @@ function JobSearch () {
 					<input placeholder='Desired job' value={position} onChange={onPositionChangeHendler}></input>
 					<input placeholder='Desired job location' value={location} onChange={onLocationChangeHendler}></input>
 					<button type="submit" >Search</button>
+					{formSubmit && data && (
+						<div>
+							{data.map((data, i) => {
+								return(
+									<WorkCards 
+										title={data.job_title}
+										location={data.job_city}
+										employment_type={data.job_employment_type}
+										description={data.job_description}
+										link={data.job_apply_link}
+										key={i}
+									/>
+								)
+							})}
+						</div>
+					)}
 				</form>
 			</section>	
-			{data.map((data, i) => {
-				return(
-					<WorkCards 
-						title={data.job_title}
-						location={data.job_city}
-						employment_type={data.job_employment_type}
-						description={data.job_description}
-						link={data.job_apply_link}
-						key={i}
-					/>
-				)
-			})}
+		
 		</>
 	);
 	
