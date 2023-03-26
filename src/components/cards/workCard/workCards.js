@@ -6,16 +6,19 @@ import "./workCard.css";
 function WorkCards(props) {
     return (
         <section>
-            <card>
-					<h3>Job Title: {props.title} </h3>
-					<p>Job Location: {props.location}</p>
-					<p>Job Employment Type: {props.employment_type}</p>
-					<p>Job Description: {props.description}</p>
-					<a href={props.link}><button>Go to job</button></a>
-            </card>
+            <div className="card">
+					<div className="card-body">
+						<h5 className="card-title">Job Title: {props.title}</h5>
+						<h6 className="card-subtitle mb-2 text-muted">Job Location: {props.location}</h6>
+						<p className="card-text">Job Description: {props.description}</p>
+						<a href="{props.link}" className="btn btn-primary">Go to job</a>
+					</div>
+				</div>
         </section>
     );
 }
+
+
 
 //exports the file to be used elsewhere
 export default WorkCards;
