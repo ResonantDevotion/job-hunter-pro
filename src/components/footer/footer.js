@@ -3,9 +3,6 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import "./footer.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-
 //function that creates a footer element for the App
 function Footer() {
   return (
@@ -14,6 +11,7 @@ function Footer() {
         <ul className="navbar-nav justify-content-center">
           <li className="nav-item">
             <a
+				  rel="noreferrer"
               target="_blank"
               className="footerLinks"
               href="https://github.com/ResonantDevotion"
@@ -23,6 +21,7 @@ function Footer() {
           </li>
           <li className="nav-item">
             <a
+				  rel="noreferrer"
               target="_blank"
               className="footerLinks"
               href="https://github.com/tyrkgithub"
@@ -32,6 +31,7 @@ function Footer() {
           </li>
           <li className="nav-item">
             <a
+				  rel="noreferrer"
               target="_blank"
               className="footerLinks"
               href="https://github.com/SashK2609"
@@ -41,6 +41,7 @@ function Footer() {
           </li>
           <li className="nav-item">
             <a
+				  rel="noreferrer"
               target="_blank"
               className="footerLinks"
               href="https://github.com/niwantha33"

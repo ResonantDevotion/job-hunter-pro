@@ -1,4 +1,5 @@
 // importing various folders/libraries to use here
+
 import { React, useState, useEffect } from "react";
 import WorkCards from "../cards/workCard/workCards";
 import "./jobSearch.css";
@@ -85,6 +86,7 @@ function JobSearch() {
       })}
     </>
   );
+
 }
 
 //exports the file to be used elsewhere
