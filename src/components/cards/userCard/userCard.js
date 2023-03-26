@@ -34,6 +34,7 @@ function UserCard() {
       <div className="card text-center">
         <div className="card-body text-dark">
           <input
+          className="input"
             placeholder="Your name"
             onChange={(event) => {
               setUserName(event.target.value);
@@ -41,6 +42,7 @@ function UserCard() {
             }}
           ></input>
           <input
+          className="input"
             placeholder="Your location"
             onChange={(event) => {
               setUserLocation(event.target.value);
@@ -48,6 +50,7 @@ function UserCard() {
             }}
           ></input>
           <input
+          className="input"
             placeholder="Your experience"
             onChange={(event) => {
               setUserExperience(event.target.value);
@@ -55,14 +58,15 @@ function UserCard() {
             }}
           ></input>
           <input
+          className="input"
             placeholder="Your skills"
             onChange={(event) => {
               setUserSkills(event.target.value);
               console.log(userSkills);
             }}
           ></input>
-          <button onClick={SaveUserLS}>Save your profile</button>
-          <button onClick={ClearUserLS}>Clear your data</button>
+          <button className="btn" onClick={SaveUserLS}>Save your profile</button>
+          <button className="btn" onClick={ClearUserLS}>Clear your data</button>
         </div>
       </div>
     </div>
