@@ -1,0 +1,23 @@
+.profileCard.text-center {
+  width: 20rem;
+  background-color: var(--clr5);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+  cursor: pointer;
+  border: 3px solid var(--clr4);
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.profileCard-title {
+  color: var(--clr5);
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+  color: var(--clr1);
+  text-shadow: 2px 2px var(--clr5);
+}
