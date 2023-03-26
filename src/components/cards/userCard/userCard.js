@@ -19,7 +19,6 @@ function UserCard() {
         userSkills: userSkills,
       },
     ];
-
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
   }
 
@@ -62,7 +61,6 @@ function UserCard() {
             placeholder="Your skills"
             onChange={(event) => {
               setUserSkills(event.target.value);
-              
             }}
           ></input>
           <button className="btn" onClick={SaveUserLS}>Save your profile</button>

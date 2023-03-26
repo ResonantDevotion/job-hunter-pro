@@ -48,6 +48,3 @@ function Navbar() {
 
 //exports the file to be used elsewhere
 export default Navbar;
-
-//COMMENTS
-// should we have a hamburger menu?
