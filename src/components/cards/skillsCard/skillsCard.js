@@ -4,6 +4,10 @@ import "./skillsCard.css";
 var desiredSkills = ["API", "Bootstrap", "Javascript", "Node", "React"];
 var desiredSkillsList = desiredSkills.map((skill) => <li>{skill}</li>);
 
+const storedSkillsInfo = localStorage.getItem("skillsInfo");
+const parsedSkillsInfo = JSON.parse(storedSkillsInfo);
+console.log(parsedSkillsInfo);
+
 const SkillsCard = (props) => {
   return (
     <div>
@@ -11,7 +15,7 @@ const SkillsCard = (props) => {
       <div className="container-fluid d-flex justify-content-center">
         <div className="profileCard text-center justify-content-center">
           <div className="profileCard-body">
-            <ul className="skills text-center">{desiredSkillsList}</ul>
+            <ul className="skills text-center">{parsedSkillsInfo[0].skillsInput}</ul>
           </div>
         </div>
       </div>

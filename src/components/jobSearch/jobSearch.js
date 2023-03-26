@@ -17,6 +17,7 @@ function JobSearch() {
   }, [finalData]);
 
   const fetchData = () => {
+	
     fetch(
       `https://jsearch.p.rapidapi.com/search?query=+${position},${location}`,
       {
