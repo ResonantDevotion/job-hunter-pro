@@ -38,7 +38,7 @@ function UserCard() {
             placeholder="Your name"
             onChange={(event) => {
               setUserName(event.target.value);
-              console.log(userName);
+              
             }}
           ></input>
           <input
@@ -46,7 +46,7 @@ function UserCard() {
             placeholder="Your location"
             onChange={(event) => {
               setUserLocation(event.target.value);
-              console.log(userLocation);
+              
             }}
           ></input>
           <input
@@ -54,7 +54,7 @@ function UserCard() {
             placeholder="Your experience"
             onChange={(event) => {
               setUserExperience(event.target.value);
-              console.log(userExperience);
+              
             }}
           ></input>
           <input
@@ -62,7 +62,7 @@ function UserCard() {
             placeholder="Your skills"
             onChange={(event) => {
               setUserSkills(event.target.value);
-              console.log(userSkills);
+              
             }}
           ></input>
           <button className="btn" onClick={SaveUserLS}>Save your profile</button>
