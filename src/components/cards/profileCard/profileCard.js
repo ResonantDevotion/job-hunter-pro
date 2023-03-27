@@ -5,6 +5,7 @@ var userSkills = ["API", "Bootstrap", "Javascript"];
 var userSkillsList = userSkills.map((skill) => <li>{skill}</li>);
 
 const profileInfo = localStorage.getItem("userInfo");
+console.log(profileInfo);
 const userInfo = JSON.parse(profileInfo);
 
 const ProfileCard = (props) => {
