@@ -5,6 +5,15 @@ function SkillsInput() {
 
   const [skillsInput, setSkillsInput] = useState("");
 
+  function PlaceholderInfo() {
+    const placeholderInfo = [
+      {
+        skillsInput: "Skills"
+      },
+    ];
+    localStorage.setItem("skillsInfo", JSON.stringify(placeholderInfo));
+  };
+
   function SaveSkills() {
     const skillsInfo = [
       {

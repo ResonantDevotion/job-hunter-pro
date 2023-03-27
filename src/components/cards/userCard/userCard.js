@@ -1,6 +1,5 @@
 // importing various folders/libraries to use here
 import React, { useState } from "react";
-import "../../../utils/style.css";
 
 //function that creates a user card element for the App
 function UserCard() {
@@ -9,6 +8,20 @@ function UserCard() {
   const [userLocation, setUserLocation] = useState("");
   const [userExperience, setUserExperience] = useState("");
   const [userSkills, setUserSkills] = useState("");
+
+  function PlaceholderInfo() {
+    const placeholderInfo = [
+      {
+        userName: "Name",
+        userLocation: "Location",
+        userExperience: "Experience",
+        userSkills: "Skills",
+      },
+    ];
+    localStorage.setItem("userInfo", JSON.stringify(placeholderInfo));
+  };
+
+  PlaceholderInfo();
 
   function SaveUserLS() {
     const userInfo = [
@@ -20,6 +33,11 @@ function UserCard() {
       },
     ];
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+    let userI = localStorage.getItem("userInfo")
+    console.log(userI);
+
+    window.location.reload(false)
   }
 
   function ClearUserLS() {
@@ -33,31 +51,31 @@ function UserCard() {
       <div className="card text-center">
         <div className="card-body text-dark">
           <input
-          className="input"
+            className="input"
             placeholder="Your name"
             onChange={(event) => {
               setUserName(event.target.value);
-              
+
             }}
           ></input>
           <input
-          className="input"
+            className="input"
             placeholder="Your location"
             onChange={(event) => {
               setUserLocation(event.target.value);
-              
+
             }}
           ></input>
           <input
-          className="input"
+            className="input"
             placeholder="Your experience"
             onChange={(event) => {
               setUserExperience(event.target.value);
-              
+
             }}
           ></input>
           <input
-          className="input"
+            className="input"
             placeholder="Your skills"
             onChange={(event) => {
               setUserSkills(event.target.value);
