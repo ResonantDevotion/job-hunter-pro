@@ -27,6 +27,12 @@ N/A
 
 
 ## Usage 
+The navbar has three links, home, profile and search which once clicked will direct the user to the respective pages of the app.
+
+The home page contains instructions on usage, the profile page has input fields to save the users personal job profile and desired skills onto cards, the search page has input fields for the user to search for jobs based on job title and location search criteria.
+
+A footer is present on all pages, with links to be directed to the creators individual githubs.
+
 Deployed application should look like the following images:
 
 
