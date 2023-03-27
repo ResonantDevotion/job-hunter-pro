@@ -11,7 +11,7 @@ function Footer() {
         <ul className="navbar-nav justify-content-center">
           <li className="nav-item">
             <a
-				  rel="noreferrer"
+              rel="noreferrer"
               target="_blank"
               className="footerLinks"
               href="https://github.com/ResonantDevotion"
@@ -21,7 +21,7 @@ function Footer() {
           </li>
           <li className="nav-item">
             <a
-				  rel="noreferrer"
+              rel="noreferrer"
               target="_blank"
               className="footerLinks"
               href="https://github.com/tyrkgithub"
@@ -31,7 +31,7 @@ function Footer() {
           </li>
           <li className="nav-item">
             <a
-				  rel="noreferrer"
+              rel="noreferrer"
               target="_blank"
               className="footerLinks"
               href="https://github.com/SashK2609"
@@ -41,7 +41,7 @@ function Footer() {
           </li>
           <li className="nav-item">
             <a
-				  rel="noreferrer"
+              rel="noreferrer"
               target="_blank"
               className="footerLinks"
               href="https://github.com/niwantha33"

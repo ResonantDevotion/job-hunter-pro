@@ -1,6 +1,5 @@
 // importing various folders/libraries to use here
 import React, { useState } from "react";
-import "../../../utils/style.css";
 
 //function that creates a user card element for the App
 function UserCard() {
