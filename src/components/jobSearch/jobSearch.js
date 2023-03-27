@@ -3,7 +3,6 @@
 import { React, useState, useEffect } from "react";
 import WorkCards from "../cards/workCard/workCards";
 import "./jobSearch.css";
-import schedule from "node-schedule";
 
 //function that creates a job search component for the App
 function JobSearch() {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../skillsInput/skillsInput.css";
 
+
 function SkillsInput() {
 
     const [skillsInput, setSkillsInput] =useState("");
@@ -11,8 +12,12 @@ function SkillsInput() {
             skillsInput: skillsInput,
         },
     ];
-    localStorage.setItem("skillsInfo", JSON.stringify(skillsInfo));
-
+    let stored = JSON.parse(localStorage.getItem("skillsInfo")) || []
+    console.log({stored})
+    stored= [...stored,...skillsInfo];
+    console.log(stored)
+    localStorage.setItem("skillsInfo", JSON.stringify(stored))
+    console.log({stored})
     }
   return (
     <div>

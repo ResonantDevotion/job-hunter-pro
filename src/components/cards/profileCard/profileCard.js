@@ -4,12 +4,6 @@ import "./profileCard.css";
 var userSkills = ["API", "Bootstrap", "Javascript"];
 var userSkillsList = userSkills.map((skill) => <li>{skill}</li>);
 
-// const profileInfo = localStorage.getItem("userInfo");
-// const userInfo = JSON.parse(profileInfo);
-// console.log(userInfo);
-
-// JSON.parse(window.localStorage.getItem("user"));
-
 const ProfileCard = (props) => {
   return (
     <div>
