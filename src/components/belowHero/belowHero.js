@@ -7,8 +7,12 @@ function BelowHero() {
   return (
     <div className="belowHero text-center">
       <h3 className="h3">
-        Step 1 Create a skills profile. Step 2 Use our job search. Step 3 Find
-        your dream job.
+        <ul>
+          <li>
+      Create your unique skills profile </li>
+      <li>Use our stress free job search</li>
+      <li>Land your dream job</li>
+        </ul>
       </h3>
     </div>
   );

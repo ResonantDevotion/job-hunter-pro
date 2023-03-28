@@ -1,6 +1,4 @@
-.section {
-  border: 2px solid black;
-}
+
 
 .hero {
   height: 400px;
@@ -12,7 +10,8 @@
 .hero h1,
 .hero h2,
 .hero h3 {
-  color: var(--clr5);
+  color: white;
+
   text-shadow: 2px 2px var(--clr1);
 }
 

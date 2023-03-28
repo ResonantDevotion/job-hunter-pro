@@ -3,7 +3,6 @@ import "./profileCard.css";
 
 
 const profileInfo = localStorage.getItem("userInfo");
-console.log(profileInfo);
 const userInfo = JSON.parse(profileInfo);
 
 const ProfileCard = (props) => {
