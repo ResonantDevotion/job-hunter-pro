@@ -1,4 +1,4 @@
-.profileCard.text-center {
+.profileCard.text-center.justify-content-center {
   width: 20rem;
   background-color: var(--clr5);
   background-position: center;

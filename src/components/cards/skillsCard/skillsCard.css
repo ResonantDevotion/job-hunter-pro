@@ -1,3 +1,18 @@
 .skills {
     margin: 0;
 }
+
+.btn {
+    background-color: var(--clr5);
+    margin: 4px;
+}
+
+.input{
+    background-color: var(--clr1);
+    margin: 4px;
+    border-radius: 5px;
+}
+
+.card-body{
+    background-color: var(--clr4);
+}
