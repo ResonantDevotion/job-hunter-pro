@@ -1,4 +1,4 @@
-
+/* 
 
 .footerLinks {
   text-decoration: none;
@@ -14,4 +14,49 @@
 
 .footerLinks:hover {
   color: var(--clr5);
+} */
+
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
 }
+
+.footerLinks {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.footerLinks:hover {
+  color: #a2a2a2;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer li {
+  margin: 0 10px;
+}
+
+.contrast {
+  color: #fff;
+}
+
+/* Use the contrasting font color for links on hover */
+.contrast:hover {
+  color: #e2e2e2;
+}
+
+

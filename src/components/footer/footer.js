@@ -23,7 +23,7 @@ function Footer() {
             <a
               rel="noreferrer"
               target="_blank"
-              className="footerLinks"
+              className="footerLinks contrast"
               href="https://github.com/tyrkgithub"
             >
               Tia <FaGithub />
@@ -33,7 +33,7 @@ function Footer() {
             <a
               rel="noreferrer"
               target="_blank"
-              className="footerLinks"
+              className="footerLinks contrast"
               href="https://github.com/SashK2609"
             >
               Oleksandra <FaGithub />
@@ -43,7 +43,7 @@ function Footer() {
             <a
               rel="noreferrer"
               target="_blank"
-              className="footerLinks"
+              className="footerLinks contrast"
               href="https://github.com/niwantha33"
             >
               Niwantha <FaGithub />
