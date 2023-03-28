@@ -16,7 +16,7 @@ function JobSearch() {
   }, [finalData]);
 
   const fetchData = () => {
-	
+
     fetch(
       `https://jsearch.p.rapidapi.com/search?query=+${encodeURIComponent(position)},${encodeURIComponent(location)}`,
       {
@@ -32,6 +32,7 @@ function JobSearch() {
         return response.json();
       })
       .then((result) => {
+        console.log(result)
         setData(Object.values(result));
       })
       .catch((err) => console.error(err));
@@ -53,37 +54,44 @@ function JobSearch() {
 
   return (
     <>
-      <h2 className="banner text-center">Enter Your Search</h2>
-      <section>
-        <form onSubmit={submitHendler}>
-          <input
-            placeholder="Desired job"
-            value={position}
-            onChange={onPositionChangeHendler}
-          ></input>
-          <input
-            placeholder="Desired job location"
-            value={location}
-            onChange={onLocationChangeHendler}
-          ></input>
-          {/* todo: add round boarder  */}
-          <button type="submit">Search</button>
-        </form>
-      </section>
-      {data.map((data, i) => {
-        return (
-          <div>
-            <h2 className="banner text-center">Your Search Result</h2>
-            <WorkCards
-              title={data.job_title}
-              location={data.job_city}
-              employment_type={data.job_employment_type}
-              description={data.job_description}
-              link={data.job_apply_link}
-              key={i}
+      <div className="job-search-container">
+
+        <h2 className="banner text-center">Enter Your Search</h2>
+        <section className="search-form">
+          <form onSubmit={submitHendler}>
+            <input
+              type="text"
+              placeholder="Desired job"
+              value={position}
+              onChange={onPositionChangeHendler}
             />
-          </div>
-        );
+
+            <input
+              type="text"
+              placeholder="Desired job location"
+              value={location}
+              onChange={onLocationChangeHendler}
+            />
+
+            <button type="submit">Search</button>
+          </form>
+        </section>
+        </div>
+        {data.map((data, i) => {
+          return (
+            <div>
+              <h2 className="banner text-center">Your Search Result</h2>
+              <WorkCards
+                title={data.job_title}
+                location={data.job_city}
+                employment_type={data.job_employment_type}
+                description={data.job_description}
+                link={data.job_apply_link}
+                key={i}
+              />
+            </div>
+          
+      );
       })}
     </>
   );
