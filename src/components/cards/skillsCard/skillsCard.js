@@ -1,42 +1,67 @@
 import React, { useState } from "react";
 import "./skillsCard.css";
-import "../skillsInput/skillsInput.css";
 
-var desiredSkills = JSON.parse(localStorage.getItem("skillsInfo")) || [];
-var desiredSkillsList = desiredSkills.map((skill) => (
-  <li>{skill.skillsInput}</li>
-));
 
-function SkillsCard() {
+
+const SkillsCard = (props) => {
   const [skillsInput, setSkillsInput] = useState("");
 
-  function PlaceholderInfo() {
-    const placeholderInfo = [
-      {
-        skillsInput: "Skills2"
-      },
-    ];
-    localStorage.setItem("skillsInfo", JSON.stringify(placeholderInfo));
-  };
+ // Clear Skills
+ function ClearSkills() {
+  localStorage.setItem("skillsInfo", "");
+}
 
-  PlaceholderInfo();
+function PlaceholderInfo() {
 
-  function SaveSkills() {
+  if (JSON.parse(localStorage.getItem("skillsInfo")) === [""]){
+  const placeholderInfo = [
+    {
+      skillsInput: "Skills",
+    }
+  ];
+  localStorage.setItem("skillsInfo", JSON.stringify(placeholderInfo));
+}}
+PlaceholderInfo()
+  // Save Skills
+  function SaveSkills(event) {
+    event.preventDefault()
     const skillsInfo = [
       {
         skillsInput: skillsInput,
       },
     ];
 
+      // Skills Placeholder
+
+
     let stored = JSON.parse(localStorage.getItem("skillsInfo")) || [];
-    console.log({ stored });
+    
     stored = [...stored, ...skillsInfo];
-    desiredSkills = stored;
     console.log(stored);
     localStorage.setItem("skillsInfo", JSON.stringify(stored));
-    console.log({ stored });
+    console.log(skillsInfo);
+
+    window.location.reload(false)
+    
   }
 
+ 
+ 
+
+ 
+  
+  // Get Skills and Map
+  const skillsInfo = localStorage.getItem("skillsInfo");
+  console.log(skillsInfo);
+  const skills = JSON.parse(skillsInfo);
+  console.log(skills)
+  var desiredSkillsList = skills.map((skill) => (
+    skill.skillsInput
+  ));
+
+
+
+  // Return
   return (
     <div>
       <div>
@@ -53,23 +78,27 @@ function SkillsCard() {
             <button className="btn" onClick={SaveSkills}>
               Save your skill
             </button>
-            <button className="btn">Clear your skills</button>
+            <button className="btn" onClick={ClearSkills}>
+              Clear your skills
+            </button>
           </div>
         </div>
-        /
       </div>
 
-      <h2 className="banner text-center">Desired Skills</h2>
-      <div className="container-fluid d-flex justify-content-center">
-        <div className="profileCard text-center justify-content-center">
-          <div className="profileCard-body">
-            <ul className="skills text-center">{desiredSkillsList}</ul>
+      <div>
+        <h2 className="banner text-center">Desired Skills</h2>
+        <div className="container-fluid d-flex justify-content-center">
+          <div className="profileCard text-center justify-content-center">
+            <div className="profileCard-body">
+              <ul className="skills text-center">
+                <li>{desiredSkillsList}</li>
+                </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
-
+};
 
 export default SkillsCard;

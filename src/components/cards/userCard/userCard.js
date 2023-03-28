@@ -17,7 +17,7 @@ function UserCard() {
         userLocation: "Location",
         userExperience: "Experience",
         userSkills: "Skills",
-      },
+      }
     ];
     localStorage.setItem("userInfo", JSON.stringify(placeholderInfo));
   };
