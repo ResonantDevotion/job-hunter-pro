@@ -47,8 +47,8 @@ function UserCard() {
     <div className="justify-content-center">
       {" "}
       <h2 className="banner text-center">Create a Profile</h2>
-      <div className="card text-center justify-content-center">
-        <div className="card-body text-dark justify-content-center">
+      <div className="user-card text-center justify-content-center">
+        <div className="user-card-body text-dark justify-content-center">
           <input
             className="input"
             placeholder="Your name"

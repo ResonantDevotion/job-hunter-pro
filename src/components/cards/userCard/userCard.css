@@ -1,1 +1,12 @@
 
+.user-card {
+      width: 20rem;
+  background-color: var(--clr5);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+  cursor: pointer;
+  border: 3px solid var(--clr4);
+  border-radius: 10px;
+}

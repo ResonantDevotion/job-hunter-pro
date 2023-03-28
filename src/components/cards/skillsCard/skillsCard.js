@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import "./skillsCard.css";
 
 function SkillsCard() {
@@ -33,18 +34,24 @@ function SkillsCard() {
 
   return (
     <div className="App">
+      <h2 className="banner text-center">Desired SKills</h2>
       <form onSubmit={updateNotes}>
         <input
+        className="input"
           type="text"
-          placeholder="type here"
+          placeholder="Enter Skill"
           value={chalk}
           onChange={updateChalk}
         />
 
-        <input type="submit" />
-        <button onClick={refreshNotes}>Refresh Notes</button>
+        <input className="btn" type="submit" />
+        <button className="btn" onClick={refreshNotes}>Clear Desired Skills</button>
       </form>
-      <ul className="notes">{notesList}</ul>
+      <div className="container-fluid d-flex justify-content-center">
+      <div className="skills-card">
+      <ul className="notes text-center">{notesList}</ul>
+      </div>
+      </div>
     
     </div>
   );
