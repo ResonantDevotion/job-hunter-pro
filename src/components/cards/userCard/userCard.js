@@ -10,6 +10,20 @@ function UserCard() {
   const [userExperience, setUserExperience] = useState("");
   const [userSkills, setUserSkills] = useState("");
 
+  function PlaceholderInfo() {
+    const placeholderInfo = [
+      {
+        userName: "Name",
+        userLocation: "Location",
+        userExperience: "Experience",
+        userSkills: "Skills",
+      },
+    ];
+    localStorage.setItem("userInfo", JSON.stringify(placeholderInfo));
+  };
+
+  PlaceholderInfo();
+
   function SaveUserLS() {
     const userInfo = [
       {
@@ -21,6 +35,10 @@ function UserCard() {
     ];
 
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    let userI = localStorage.getItem("userInfo")
+    console.log(userI);
+
+    window.location.reload(false)
   }
 
   function ClearUserLS() {

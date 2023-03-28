@@ -10,6 +10,17 @@ var desiredSkillsList = desiredSkills.map((skill) => (
 function SkillsCard() {
   const [skillsInput, setSkillsInput] = useState("");
 
+  function PlaceholderInfo() {
+    const placeholderInfo = [
+      {
+        skillsInput: "Skills2"
+      },
+    ];
+    localStorage.setItem("skillsInfo", JSON.stringify(placeholderInfo));
+  };
+
+  PlaceholderInfo();
+
   function SaveSkills() {
     const skillsInfo = [
       {
