@@ -56,7 +56,7 @@ PlaceholderInfo()
   const skills = JSON.parse(skillsInfo);
   console.log(skills)
   var desiredSkillsList = skills.map((skill) => (
-    skill.skillsInput
+    <li>{skill.skillsInput}</li>
   ));
 
 
@@ -91,7 +91,7 @@ PlaceholderInfo()
           <div className="profileCard text-center justify-content-center">
             <div className="profileCard-body">
               <ul className="skills text-center">
-                <li>{desiredSkillsList}</li>
+                {desiredSkillsList}
                 </ul>
             </div>
           </div>
