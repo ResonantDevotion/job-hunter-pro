@@ -16,11 +16,7 @@ function UserCard() {
         userLocation: "Location",
         userExperience: "Experience",
         userSkills: "Skills",
-<<<<<<< HEAD
       }
-=======
-      },
->>>>>>> main
     ];
     localStorage.setItem("userInfo", JSON.stringify(placeholderInfo));
   };
@@ -37,10 +33,6 @@ function UserCard() {
       },
     ];
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
-<<<<<<< HEAD
-=======
-
->>>>>>> main
     let userI = localStorage.getItem("userInfo")
     console.log(userI);
 
