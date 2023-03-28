@@ -12,13 +12,11 @@ function Profile() {
   return (
     <div className="profile">
       <UserCard />
-      <ProfileCard />
-   
+      <ProfileCard />   
       <SkillsCard />
     </div>
   );
 }
-
 
 
 export default Profile;

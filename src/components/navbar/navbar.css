@@ -1,7 +1,7 @@
 .navbar {
-  background-color: var(--clr) !important;
+  /* background-color: var(--clr) !important; */
 }
-
+/* 
 .nav-item {
   list-style: none;
   padding-left: 50px;
@@ -43,4 +43,8 @@
 }
 .navbar.navbar-expand-lg.navbar-light.bg-light {
   padding: 0;
+} */
+
+.custom-text{
+  font-weight: bold;
 }

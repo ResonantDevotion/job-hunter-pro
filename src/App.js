@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
-
+        <Search />        
         <Routes>
           <Route path="/" element={<Frontpage />} />
           <Route path="/home" element={<Frontpage />} />
@@ -20,7 +20,7 @@ function App() {
         </Routes>
 
         <Footer>
-          
+
         </Footer>
       </div>
     </Router>

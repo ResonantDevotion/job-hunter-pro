@@ -1,9 +1,9 @@
 .banner {
-  color: var(--clr5);
+  color:#336699;
 
-  text-shadow: 2px 2px var(--clr1);
+  text-shadow: 2px 2px #336699;
   position: relative;
   font-size: 30px;
-  background-color: var(--clr2);
+  background-color: #336699;
   margin: 0;
 }

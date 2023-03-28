@@ -12,11 +12,11 @@
 .hero h1,
 .hero h2,
 .hero h3 {
-  color: var(--clr5);
-  text-shadow: 2px 2px var(--clr1); 
+  color:#336699;
+  /* text-shadow: 2px 2px var(--clr1);  */
   
 }
-
+/* 
 .hero h1 {
   font-size: 80px;
   padding-top: 140px;
@@ -29,4 +29,4 @@
 
 .hero h3 {
   font-size: 40px;
-}
+} */

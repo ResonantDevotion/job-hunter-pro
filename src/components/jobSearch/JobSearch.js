@@ -89,8 +89,7 @@ function JobSearch() {
                 link={data.job_apply_link}
                 key={i}
               />
-            </div>
-          
+            </div>          
       );
       })}
     </>
