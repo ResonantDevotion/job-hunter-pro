@@ -16,3 +16,7 @@
 .card-body{
     background-color: var(--clr4);
 }
+
+.skill-li{
+    list-style: none;
+}

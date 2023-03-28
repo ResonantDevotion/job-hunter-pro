@@ -7,9 +7,3 @@
   background-color: var(--clr2);
   margin: 0;
 }
-.container-fluid.justify-content-center {
-  color: var(--clr5) !important;
-
-  text-shadow: 1px 1px var(--clr1);
-  background-color: var(--clr3) !important;
-}

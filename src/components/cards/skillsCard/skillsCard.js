@@ -56,7 +56,7 @@ PlaceholderInfo()
   const skills = JSON.parse(skillsInfo);
   console.log(skills)
   var desiredSkillsList = skills.map((skill) => (
-    <li>{skill.skillsInput}</li>
+    <li className="skill-li">{skill.skillsInput}</li>
   ));
 
 
