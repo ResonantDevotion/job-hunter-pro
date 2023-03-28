@@ -6,9 +6,9 @@ import "./footer.css";
 //function that creates a footer element for the App
 function Footer() {
   return (
-    <footer className="section">
-      <div className="container-fluid justify-content-center">
-        <ul className="navbar-nav justify-content-center">
+    <footer className="footer section">
+      <div className="container">
+        <ul className="navbar-nav d-flex justify-content-center">
           <li className="nav-item">
             <a
               rel="noreferrer"

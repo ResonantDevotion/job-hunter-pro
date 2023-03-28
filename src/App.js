@@ -19,7 +19,9 @@ function App() {
           <Route path="/search" element={<Search />} />
         </Routes>
 
-        <Footer></Footer>
+        <Footer>
+          
+        </Footer>
       </div>
     </Router>
   );

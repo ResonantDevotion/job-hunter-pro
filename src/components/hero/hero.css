@@ -13,7 +13,8 @@
 .hero h2,
 .hero h3 {
   color: var(--clr5);
-  text-shadow: 2px 2px var(--clr1);
+  text-shadow: 2px 2px var(--clr1); 
+  
 }
 
 .hero h1 {
