@@ -1,65 +1,54 @@
 import React, { useState } from "react";
 import "./skillsCard.css";
 
-
-
 const SkillsCard = (props) => {
   const [skillsInput, setSkillsInput] = useState("");
 
- // Clear Skills
- function ClearSkills() {
-  localStorage.setItem("skillsInfo", "");
-}
+  // Clear Skills
+  function ClearSkills() {
+    localStorage.setItem("skillsInfo", "");
+  }
 
-function PlaceholderInfo() {
-
-  if (JSON.parse(localStorage.getItem("skillsInfo")) === [""]){
-  const placeholderInfo = [
-    {
-      skillsInput: "Skills",
+  function PlaceholderInfo() {
+    if (JSON.parse(localStorage.getItem("skillsInfo")) === [""]) {
+      const placeholderInfo = [
+        {
+          skillsInput: "Skills",
+        },
+      ];
+      localStorage.setItem("skillsInfo", JSON.stringify(placeholderInfo));
     }
-  ];
-  localStorage.setItem("skillsInfo", JSON.stringify(placeholderInfo));
-}}
-PlaceholderInfo()
+  }
+  PlaceholderInfo();
   // Save Skills
   function SaveSkills(event) {
-    event.preventDefault()
+    event.preventDefault();
     const skillsInfo = [
       {
         skillsInput: skillsInput,
       },
     ];
 
-      // Skills Placeholder
-
+    // Skills Placeholder
 
     let stored = JSON.parse(localStorage.getItem("skillsInfo")) || [];
-    
+
     stored = [...stored, ...skillsInfo];
     console.log(stored);
     localStorage.setItem("skillsInfo", JSON.stringify(stored));
     console.log(skillsInfo);
 
-    window.location.reload(false)
-    
+    window.location.reload(false);
   }
 
- 
- 
-
- 
-  
   // Get Skills and Map
   const skillsInfo = localStorage.getItem("skillsInfo");
   console.log(skillsInfo);
   const skills = JSON.parse(skillsInfo);
-  console.log(skills)
+  console.log(skills);
   var desiredSkillsList = skills.map((skill) => (
     <li className="skill-li">{skill.skillsInput}</li>
   ));
-
-
 
   // Return
   return (
@@ -90,9 +79,7 @@ PlaceholderInfo()
         <div className="container-fluid d-flex justify-content-center">
           <div className="profileCard text-center justify-content-center">
             <div className="profileCard-body">
-              <ul className="skills text-center">
-                {desiredSkillsList}
-                </ul>
+              <ul className="skills text-center">{desiredSkillsList}</ul>
             </div>
           </div>
         </div>
