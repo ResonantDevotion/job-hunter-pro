@@ -15,6 +15,7 @@
     "get-google-fonts": "^1.2.2",
     "node-schedule": "^2.1.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",

@@ -16,7 +16,11 @@ function UserCard() {
         userLocation: "Location",
         userExperience: "Experience",
         userSkills: "Skills",
+<<<<<<< HEAD
+      }
+=======
       },
+>>>>>>> main
     ];
     localStorage.setItem("userInfo", JSON.stringify(placeholderInfo));
   };
@@ -33,7 +37,10 @@ function UserCard() {
       },
     ];
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
     let userI = localStorage.getItem("userInfo")
     console.log(userI);
 
@@ -45,11 +52,11 @@ function UserCard() {
   }
 
   return (
-    <div>
+    <div className="justify-content-center">
       {" "}
       <h2 className="banner text-center">Create a Profile</h2>
-      <div className="card text-center">
-        <div className="card-body text-dark">
+      <div className="card text-center justify-content-center">
+        <div className="card-body text-dark justify-content-center">
           <input
             className="input"
             placeholder="Your name"
