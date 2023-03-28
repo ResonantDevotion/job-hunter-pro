@@ -1,5 +1,11 @@
-.section {
-  border: 2px solid black;
+.footer {
+   background-color: var(--clr3);
+   margin-top: auto;
+   height: 60px;
+   width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .footerLinks {
@@ -7,7 +13,6 @@
   text-transform: uppercase;
   margin: 0;
   list-style: none;
-  align-items: center;
   width: 100%;
   padding: 0;
   color: var(--clr1);

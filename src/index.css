@@ -1,11 +1,19 @@
 :root {
-  --clr1: rgb(255, 179, 186);
-  --clr2: rgb(255, 223, 186);
-  --clr3: rgb(255, 255, 186);
-  --clr4: rgb(186, 255, 201);
-  --clr5: rgb(186, 225, 255);
+	--clr1: rgb(255, 179, 186);
+	--clr2: rgb(255, 223, 186);
+	--clr3: rgb(255, 255, 186);
+	--clr4: rgb(186, 255, 201);
+	--clr5: rgb(186, 225, 255);
+}
+* {
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	flex-direction: column;
+	background-color: var(--clr4) !important;
 }
 
-body {
-  background-color: var(--clr4) !important;
-}

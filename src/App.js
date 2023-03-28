@@ -4,12 +4,14 @@ import Footer from "./components/footer/footer";
 import Frontpage from "./pages/frontpage";
 import Profile from "./pages/profile";
 import Search from "./pages/search";
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="wrapper">
         <Navbar />
 
         <Routes>
@@ -19,7 +21,7 @@ function App() {
           <Route path="/search" element={<Search />} />
         </Routes>
 
-        <Footer></Footer>
+		  <Footer></Footer>
       </div>
     </Router>
   );
