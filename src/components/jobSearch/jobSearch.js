@@ -18,7 +18,7 @@ function JobSearch() {
   const fetchData = () => {
 	
     fetch(
-      `https://jsearch.p.rapidapi.com/search?query=+${position},${location}`,
+      `https://jsearch.p.rapidapi.com/search?query=+${encodeURIComponent(position)},${encodeURIComponent(location)}`,
       {
         method: "GET",
         headers: {
@@ -32,7 +32,7 @@ function JobSearch() {
         return response.json();
       })
       .then((result) => {
-        setData(result.data);
+        setData(Object.values(result));
       })
       .catch((err) => console.error(err));
   };
@@ -66,6 +66,7 @@ function JobSearch() {
             value={location}
             onChange={onLocationChangeHendler}
           ></input>
+          {/* todo: add round boarder  */}
           <button type="submit">Search</button>
         </form>
       </section>

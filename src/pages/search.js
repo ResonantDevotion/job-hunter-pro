@@ -5,6 +5,8 @@ import "../pages/pages.css";
 function Search() {
   return (
     <div className="search">
+
+      {/* return  */}
       <JobSearch />
     </div>
   );
