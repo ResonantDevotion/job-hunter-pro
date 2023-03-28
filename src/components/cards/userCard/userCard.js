@@ -1,6 +1,5 @@
 // importing various folders/libraries to use here
 import React, { useState } from "react";
-import "../../../utils/style.css";
 
 //function that creates a user card element for the App
 function UserCard() {
@@ -17,7 +16,11 @@ function UserCard() {
         userLocation: "Location",
         userExperience: "Experience",
         userSkills: "Skills",
+<<<<<<< HEAD
       }
+=======
+      },
+>>>>>>> main
     ];
     localStorage.setItem("userInfo", JSON.stringify(placeholderInfo));
   };
@@ -33,8 +36,11 @@ function UserCard() {
         userSkills: userSkills,
       },
     ];
-
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
     let userI = localStorage.getItem("userInfo")
     console.log(userI);
 
@@ -52,35 +58,34 @@ function UserCard() {
       <div className="card text-center justify-content-center">
         <div className="card-body text-dark justify-content-center">
           <input
-          className="input"
+            className="input"
             placeholder="Your name"
             onChange={(event) => {
               setUserName(event.target.value);
-              
+
             }}
           ></input>
           <input
-          className="input"
+            className="input"
             placeholder="Your location"
             onChange={(event) => {
               setUserLocation(event.target.value);
-              
+
             }}
           ></input>
           <input
-          className="input"
+            className="input"
             placeholder="Your experience"
             onChange={(event) => {
               setUserExperience(event.target.value);
-              
+
             }}
           ></input>
           <input
-          className="input"
+            className="input"
             placeholder="Your skills"
             onChange={(event) => {
               setUserSkills(event.target.value);
-              
             }}
           ></input>
           <button className="btn" onClick={SaveUserLS}>Save your profile</button>
