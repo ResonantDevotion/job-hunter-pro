@@ -34,7 +34,7 @@
 }
 
 .container-fluid.justify-content-center {
-  color: var(--clr5) !important;
+  color: var(--clr4) !important;
   text-shadow: 1px 1px var(--clr1);
   background-color: var(--clr3) !important;
 }
