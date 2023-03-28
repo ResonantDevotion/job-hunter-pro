@@ -1,91 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./skillsCard.css";
 
-const SkillsCard = (props) => {
-  const [skillsInput, setSkillsInput] = useState("");
+function SkillsCard() {
+  const [chalk, setChalk] = useState("");
+  const [notes, setNotes] = useState(() => {
+    const savedState = localStorage.getItem("stateString");
+    const notes = JSON.parse(savedState);
+    return notes || [];
+  });
 
-  // Clear Skills
-  function ClearSkills() {
-    localStorage.setItem("skillsInfo", "");
-  }
+  useEffect(() => {
+    localStorage.setItem("stateString", JSON.stringify(notes));
+  }, [notes]);
 
-  function PlaceholderInfo() {
-    if (JSON.parse(localStorage.getItem("skillsInfo")) === [""]) {
-      const placeholderInfo = [
-        {
-          skillsInput: "Skills",
-        },
-      ];
-      localStorage.setItem("skillsInfo", JSON.stringify(placeholderInfo));
-    }
-  }
-  PlaceholderInfo();
-  // Save Skills
-  function SaveSkills(event) {
+  const updateChalk = (event) => {
+    setChalk(event.target.value);
+  };
+
+  const updateNotes = (event) => {
     event.preventDefault();
-    const skillsInfo = [
-      {
-        skillsInput: skillsInput,
-      },
-    ];
+    var newNotes = notes.slice();
+    newNotes.push(chalk);
+    setChalk("");
+    setNotes(newNotes);
+  };
 
-    // Skills Placeholder
+  const refreshNotes = () => {
+    setNotes([]);
+  };
 
-    let stored = JSON.parse(localStorage.getItem("skillsInfo")) || [];
+  const notesList = notes.map((note) => <li>{note}</li>);
 
-    stored = [...stored, ...skillsInfo];
-    console.log(stored);
-    localStorage.setItem("skillsInfo", JSON.stringify(stored));
-    console.log(skillsInfo);
-
-    window.location.reload(false);
-  }
-
-  // Get Skills and Map
-  const skillsInfo = localStorage.getItem("skillsInfo");
-  console.log(skillsInfo);
-  const skills = JSON.parse(skillsInfo);
-  console.log(skills);
-  var desiredSkillsList = skills.map((skill) => (
-    <li className="skill-li">{skill.skillsInput}</li>
-  ));
-
-  // Return
   return (
-    <div>
-      <div>
-        <h2 className="banner text-center">Add skills you want gain</h2>
-        <div className="card text-center">
-          <div className="card-body text-dark">
-            <input
-              className="input"
-              placeholder="Add a skill"
-              onChange={(event) => {
-                setSkillsInput(event.target.value);
-              }}
-            ></input>
-            <button className="btn" onClick={SaveSkills}>
-              Save your skill
-            </button>
-            <button className="btn" onClick={ClearSkills}>
-              Clear your skills
-            </button>
-          </div>
-        </div>
-      </div>
+    <div className="App">
+      <form onSubmit={updateNotes}>
+        <input
+          type="text"
+          placeholder="type here"
+          value={chalk}
+          onChange={updateChalk}
+        />
 
-      <div>
-        <h2 className="banner text-center">Desired Skills</h2>
-        <div className="container-fluid d-flex justify-content-center">
-          <div className="profileCard text-center justify-content-center">
-            <div className="profileCard-body">
-              <ul className="skills text-center">{desiredSkillsList}</ul>
-            </div>
-          </div>
-        </div>
-      </div>
+        <input type="submit" />
+        <button onClick={refreshNotes}>Refresh Notes</button>
+      </form>
+      <ul className="notes">{notesList}</ul>
+    
     </div>
   );
-};
+}
 
 export default SkillsCard;
