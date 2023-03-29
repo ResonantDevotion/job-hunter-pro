@@ -8,7 +8,7 @@
   cursor: pointer;
   border: 3px solid var(--clr4);
   border-radius: 10px;
- 
+ color: var(--clr2);
 }
 
 .profileCard-title {
