@@ -10,7 +10,7 @@
 .belowHero h1,
 .belowHero h2,
 .belowHero h3 {
-  color: black;
+  color: #3b4352;
 
   text-shadow: 2px 2px var(--clr5);
 }
