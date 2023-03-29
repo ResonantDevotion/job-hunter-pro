@@ -7,7 +7,7 @@ import "./hero.css";
 function Hero() {
   return (
     // <JobSearch />
-    null
+    <h1>Job</h1>
   );
 }
 

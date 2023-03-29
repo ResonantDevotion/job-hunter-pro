@@ -11,19 +11,14 @@ function JobSearch() {
   const [data, setData] = useState([]);
   const [finalData, setFinalData] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, [finalData]);
-
   const fetchData = () => {
-
     fetch(
       `https://jsearch.p.rapidapi.com/search?query=+${encodeURIComponent(position)},${encodeURIComponent(location)}`,
       {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "708c147ca5msh9dc67ead913554fp11c54bjsn4a3e2e3b0adc",
+            "018a91d209msh4e37ad335431490p190890jsn258356e64003",
           "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
         },
       }
@@ -47,55 +42,40 @@ function JobSearch() {
 
   const submitHendler = (e) => {
     e.preventDefault();
-    setFinalData(position, location);
+    fetchData();
+    // setFinalData(position, location);
+  
   };
-
-  console.log(data);
-
+  // console.log(data);
   return (
     <>
-      <div className="job-search-container">
+      
+        <form onSubmit={submitHendler} className="form-inline">
+          <div className="form-group d-flex justify-content-center">
 
-        <h2 className="banner text-center">Enter Your Search</h2>
-        <section className="search-form">
-          <form onSubmit={submitHendler}>
-            <input
-              type="text"
-              placeholder="Desired job"
-              value={position}
-              onChange={onPositionChangeHendler}
-            />
-
-            <input
-              type="text"
-              placeholder="Desired job location"
-              value={location}
-              onChange={onLocationChangeHendler}
-            />
-
-            <button type="submit">Search</button>
-          </form>
-        </section>
-        </div>
-        {data.map((data, i) => {
-          return (
-            <div>
-              <h2 className="banner text-center">Your Search Result</h2>
-              <WorkCards
-                title={data.job_title}
-                location={data.job_city}
-                employment_type={data.job_employment_type}
-                description={data.job_description}
-                link={data.job_apply_link}
-                key={i}
+            <div className="inline-block">
+              <input
+                type="text"
+                placeholder="Desired job"
+                value={position}
+                onChange={onPositionChangeHendler}
               />
-            </div>          
-      );
-      })}
+            </div>
+            <div className="inline-block">
+              <input
+                type="text"
+                placeholder="Desired job location"
+                value={location}
+                onChange={onLocationChangeHendler}
+              />
+            </div>
+            <button type="submit" className="btn btn-success inline-block ">Search</button>
+          </div>
+        </form>     
+
+      <WorkCards dataProp={data}/>      
     </>
   );
-
 }
-
 //exports the file to be used elsewhere
 export default JobSearch;

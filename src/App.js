@@ -18,10 +18,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<Search />} />
         </Routes>
-
-        <Footer>
-
-        </Footer>
+        <Footer />
       </div>
     </Router>
   );

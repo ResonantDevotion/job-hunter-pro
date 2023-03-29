@@ -9,7 +9,7 @@ import BelowHero from "../components/belowHero/belowHero";
 function Frontpage() {
   return (
     <section className="body section">
-      <Hero />      
+      {<p>Find Jobs JobHunterPro helps people get jobs. Over 10 million stories shared.</p>}
     </section>
   );
 }
