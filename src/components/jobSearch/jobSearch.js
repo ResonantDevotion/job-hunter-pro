@@ -57,8 +57,8 @@ function JobSearch () {
 			<section className="search-wrapper">
 				<div className="search-form-wrapper">
 					<form className="search-form text-center" onSubmit={submitHendler}>
-						<input type="text" className="search-input" placeholder='Desired job' value={position} onChange={onPositionChangeHendler}></input>
-						<input type="text" className="search-input" placeholder='Desired job location' value={location} onChange={onLocationChangeHendler}></input>
+						<input className="search-input" placeholder='Desired job' value={position} onChange={onPositionChangeHendler}></input>
+						<input className="search-input" placeholder='Desired job location' value={location} onChange={onLocationChangeHendler}></input>
 						<Button type="submit" className="search-button">Search</Button>
 					</form>
 				</div>
