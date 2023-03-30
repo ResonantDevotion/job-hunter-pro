@@ -40,7 +40,8 @@ function UserCard() {
 
   // function to clear user info from local storage
   function ClearUserLS() {
-    localStorage.setItem("userInfo", "");
+    localStorage.removeItem("userInfo");
+	 window.location.reload(false)
   }
 
   // returns the following to add to the document
