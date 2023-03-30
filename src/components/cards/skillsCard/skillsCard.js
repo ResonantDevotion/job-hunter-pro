@@ -1,7 +1,8 @@
+// importing various folders/libraries to use here
 import React, { useState, useEffect } from "react";
-
 import "./skillsCard.css";
 
+// function to add a skills card
 function SkillsCard() {
   const [chalk, setChalk] = useState("");
   const [notes, setNotes] = useState(() => {
@@ -34,10 +35,10 @@ function SkillsCard() {
 
   return (
     <div className="App">
-      <h2 className="banner text-center">Desired SKills</h2>
+      <h2 className="banner text-center">Desired Skills</h2>
       <form onSubmit={updateNotes}>
         <input
-        className="input"
+          className="input"
           type="text"
           placeholder="Enter Skill"
           value={chalk}
@@ -48,11 +49,11 @@ function SkillsCard() {
         <button className="btn" onClick={refreshNotes}>Clear Desired Skills</button>
       </form>
       <div className="container-fluid d-flex justify-content-center">
-      <div className="skills-card">
-      <ul className="notes text-center">{notesList}</ul>
+        <div className="skills-card">
+          <ul className="notes text-center">{notesList}</ul>
+        </div>
       </div>
-      </div>
-    
+
     </div>
   );
 }
