@@ -11,15 +11,16 @@ import "swiper/css/navigation";
 
 
 //function that creates a job search component for the App
-function JobSearch () {
-	const [data, setData] = useState( false, [] );
+function JobSearch() {
+	// setting the useStates to track changes in these key value pairs
+	const [data, setData] = useState(false, []);
 	const [position, setPositions] = useState('');
 	const [location, setLocations] = useState('');
-	const [isLoading, setIsLoading] = useState (false);
-	
+	const [isLoading, setIsLoading] = useState(false);
 
+	// function to fetch the API
 	const search = (loc, pos) => {
-		setIsLoading (true);
+		setIsLoading(true);
 		return fetch(`https://jsearch.p.rapidapi.com/search?query=+${pos},${loc}`, {
 			method: 'GET',
 			headers: {
@@ -27,14 +28,14 @@ function JobSearch () {
 				'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
 			}
 		})
-		.then(response => {return response.json()})
-		.then(result => {
-			setData(result.data);
-			setIsLoading(false);
-		})
-		
-		.catch(err => console.error(err));
-		
+			.then(response => { return response.json() })
+			.then(result => {
+				setData(result.data);
+				setIsLoading(false);
+			})
+
+			.catch(err => console.error(err));
+
 	};
 
 	const onPositionChangeHendler = (e) => {
@@ -42,7 +43,7 @@ function JobSearch () {
 	}
 	const onLocationChangeHendler = (e) => {
 		setLocations(e.target.value);
-	} 
+	}
 
 	const submitHendler = (e) => {
 		e.preventDefault();
@@ -66,49 +67,49 @@ function JobSearch () {
 					<div className="swiper-container">
 						{!isLoading && data && (
 							<div className="container py-4 px-4 justify-content-center">
-							<Swiper
-								style={{
-									"--swiper-navigation-color": "#0f0f0f",
-									"--swiper-navigation-size": "25px",
-									"--swiper-pagination-color": "var(--clr1)" 
-								}}
-								grabCursor={true}
-								pagination={{ clickable: true }}
-								navigation
-								modules={[ Navigation, Pagination]}
-								className="my-swiper"
-								slidesPerView={1}
-								spaceBetween={1}
-								centeredSlides
-								
-								
-							>
-								<>
-									{data.map((data, i) => {
-										return(
-											<SwiperSlide key={i}>
-												<WorkCards 
-													title={data.job_title}
-													location={data.job_city}
-													employer={data.employer_name}
-													employment_type={data.job_employment_type}
-													description={data.job_description}
-													link={data.job_apply_link}
-													employmentType={data.job_employment_type}
-												/>
-											</SwiperSlide>
-										)
-									})}
-								</>
-							</Swiper>
-						</div>
+								<Swiper
+									style={{
+										"--swiper-navigation-color": "#0f0f0f",
+										"--swiper-navigation-size": "25px",
+										"--swiper-pagination-color": "var(--clr1)"
+									}}
+									grabCursor={true}
+									pagination={{ clickable: true }}
+									navigation
+									modules={[Navigation, Pagination]}
+									className="my-swiper"
+									slidesPerView={1}
+									spaceBetween={1}
+									centeredSlides
+
+
+								>
+									<>
+										{data.map((data, i) => {
+											return (
+												<SwiperSlide key={i}>
+													<WorkCards
+														title={data.job_title}
+														location={data.job_city}
+														employer={data.employer_name}
+														employment_type={data.job_employment_type}
+														description={data.job_description}
+														link={data.job_apply_link}
+														employmentType={data.job_employment_type}
+													/>
+												</SwiperSlide>
+											)
+										})}
+									</>
+								</Swiper>
+							</div>
 						)}
 					</div>
-				)}	
-			</section>	
+				)}
+			</section>
 		</>
 	);
-	
+
 }
 
 //exports the file to be used elsewhere
