@@ -34,7 +34,7 @@ function Footer() {
               rel="noreferrer"
               target="_blank"
               className="footerLinks"
-              href="https://github.com/SashK2609"
+              href="https://github.com/SashaK2609"
             >
               Oleksandra <FaGithub />
             </a>
