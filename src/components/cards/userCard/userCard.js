@@ -9,6 +9,7 @@ function UserCard() {
   const [userExperience, setUserExperience] = useState("");
   const [userSkills, setUserSkills] = useState("");
 
+  // placeholder info function
   function PlaceholderInfo() {
     const placeholderInfo = [
       {
@@ -23,6 +24,7 @@ function UserCard() {
 
   PlaceholderInfo();
 
+  // function to save the user info to local storage and override the placeholder info.
   function SaveUserLS() {
     const userInfo = [
       {
@@ -33,16 +35,15 @@ function UserCard() {
       },
     ];
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
-    let userI = localStorage.getItem("userInfo")
-    console.log(userI);
-
     window.location.reload(false)
   }
 
+  // function to clear user info from local storage
   function ClearUserLS() {
     localStorage.setItem("userInfo", "");
   }
 
+  // returns the following to add to the document
   return (
     <div className="justify-content-center">
       {" "}
@@ -54,7 +55,6 @@ function UserCard() {
             placeholder="Your name"
             onChange={(event) => {
               setUserName(event.target.value);
-
             }}
           ></input>
           <input
@@ -62,7 +62,6 @@ function UserCard() {
             placeholder="Your location"
             onChange={(event) => {
               setUserLocation(event.target.value);
-
             }}
           ></input>
           <input
@@ -70,7 +69,6 @@ function UserCard() {
             placeholder="Your experience"
             onChange={(event) => {
               setUserExperience(event.target.value);
-
             }}
           ></input>
           <input

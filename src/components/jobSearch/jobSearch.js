@@ -33,24 +33,18 @@ function JobSearch() {
 				setData(result.data);
 				setIsLoading(false);
 			})
-
 			.catch(err => console.error(err));
-
 	};
-
 	const onPositionChangeHendler = (e) => {
 		setPositions(e.target.value);
 	}
 	const onLocationChangeHendler = (e) => {
 		setLocations(e.target.value);
 	}
-
 	const submitHendler = (e) => {
 		e.preventDefault();
-
 		search(location, position);
 	}
-
 	console.log("this is data from JobSearch", data)
 
 	return (

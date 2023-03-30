@@ -1,6 +1,6 @@
+// importing various folders/libraries to use
 import React from "react";
 import "../pages/pages.css";
-
 import Hero from "../components/hero/hero";
 import BelowHero from "../components/belowHero/belowHero";
 

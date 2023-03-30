@@ -1,11 +1,12 @@
+// importing various folders/libraries to use here
 import React from "react";
 import "./profileCard.css";
 
+// retrieving stored infomration in local storage
+const userInfo = JSON.parse(localStorage.getItem("userInfo")) || []
 
-const profileInfo = localStorage.getItem("userInfo");
-const userInfo = JSON.parse(profileInfo);
-
-const ProfileCard = (props) => {
+// function to create the profile card with the retrieved LS data.
+function ProfileCard() {
   return (
     <div>
       <h2 className="banner text-center">Your Profile</h2>

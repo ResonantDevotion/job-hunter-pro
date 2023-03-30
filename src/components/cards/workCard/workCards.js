@@ -17,7 +17,6 @@ function WorkCards(props) {
 				<h5 className="card-subtitle mb-2"><strong>Employment Type:</strong> {props.employmentType}</h5>
 				<div className="card-btn-wrapper">
 					<Button className="modal-button" onClick={() => setLgShow(true)}>Job Description</Button>
-
 					<Modal
 						size="lg"
 						show={lgShow}
@@ -37,8 +36,6 @@ function WorkCards(props) {
 		</div>
 	);
 }
-
-
 
 //exports the file to be used elsewhere
 export default WorkCards;
